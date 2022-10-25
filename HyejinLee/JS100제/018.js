@@ -32,6 +32,17 @@ const average = sum / input.length;
 
 console.log(average);
 
+// 내 코드 3
+const input = prompt('점수를 입력하세요.').split(' ');
+let sum = 0;
+
+// 키 값 반환
+for(let i in input){
+  sum += parseInt(input[i])
+}
+console.log(Math.floor(sum / input.length));
+
+// 나중에 for of도 사용해보기 (바로 값으로 계산할 수 있도록)
 
 // 답안
 const scores = prompt('세 과목의 점수를 입력하세요.').split(' ');
