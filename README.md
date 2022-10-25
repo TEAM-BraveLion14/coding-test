@@ -4,9 +4,9 @@
 2. SeminKang과 같이 자신의 이름(카멜 케이스)으로 한 폴더 생성
 3. 생성한 폴더 하에 'JS100제'와 같은 하위 폴더 생성
 4. git checkout -b 브랜치이름
-## 개인별 branch에 파일 및 폴더 생성 후 커밋
+## 개인별 branch에 파일 및 폴더 생성/수정 후 커밋
 1. git checkout 브랜치이름
-2. git add 
+2. git add .
 3. git commit -m "커밋 메세지"
 4. git push -u origin 브랜치이름
     * 생성한 브랜치에 커밋 푸시
