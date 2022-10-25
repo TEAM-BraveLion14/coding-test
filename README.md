@@ -12,8 +12,10 @@
     * 생성한 브랜치에 커밋 푸시
 5. 풀리퀘스트(깃허브 홈페이지에서)
 ## main을 개인별 branch에 병합
-1. 풀리퀘스트시 관리자가 main에 개인별 branch 병합
-2. 병합이 완료되면 팀원은 최종 병합본(main)을 개인별 브랜치에 병합해야 함
-3. git checkout 브랜치이름
-4. git merge main
-5. git push -u origin 브랜치이름
+1. 팀원이 main에 pull request
+2. 관리자가 pull request 반영해서 main branch 하 파일 및 폴더가 바뀜
+3. git checkout main
+4. git pull origin main
+5. git checkout 개인브랜치
+6. git merge main
+7. git push -u origin 개인브랜치
