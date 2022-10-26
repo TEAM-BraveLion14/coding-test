@@ -12,6 +12,7 @@ const circle = n => n * n * 3.14;
 
 console.log(circle(n));
 
+// 좀 더 의미있는 변수명으로 짓기 
 
 // 답안
 function circle(n) {

@@ -24,6 +24,7 @@ Jaavvaassccrriippt
 
 // 내 코드
 const str = prompt('입력하세요.').split('');
+// => split은 굳이 없어도 될 것 같다.
 
 for(let i = 0; i < str.length; i++){
     console.log(str[i], str[i+1]);
@@ -32,6 +33,7 @@ for(let i = 0; i < str.length; i++){
 // 질문
 내 코드에서는 i의 범위를 잡을 때 i < str.length 이렇게 잡았는데, 답안을 보면 -1까지 되어 있다. -1을 한 이유는 제일 마지막 글자는 한 번만 출력되도록 하기 위해서인가? [❓❓❓]
 =>Yes
+
 
 // 답안
 const data = prompt('문자를 입력하세요.');

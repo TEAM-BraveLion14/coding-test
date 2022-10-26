@@ -7,7 +7,7 @@
 // 내 코드
 const alphabet = prompt('알파벳 대문자를 입력하세요.');
 // 알파벳 하나만 입력하라고 했으니까 글자 수 제한 걸어놓음
-if(alphabet === alphabet.toUpperCase() && alphabet.length <= 1){
+if(alphabet === alphabet.toUpperCase() && alphabet.length <= 1){ // => 하나도 안썼을 때도 고려해야 할듯 / 한글 썼을 때에도 YES 나오니까 이런 상황을 방지하기 위해선 정규표현식 사용하자
     console.log('YES');
 }else if(alphabet.length > 1){
     console.log('한 글자만 입력해주세요.');
