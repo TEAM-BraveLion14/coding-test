@@ -31,12 +31,9 @@ let people = 0;
 let total = 0;
 
 for(let i = 0; i < friends.length; i++){
-    total += friendsWeight
-    if(friendsWeight <= total){
-        people ++
-    }else{
-        continue;
-    }
+    
+
+    
 }
 console.log(people);
 

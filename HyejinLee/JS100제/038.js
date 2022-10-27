@@ -32,38 +32,24 @@ for(let i = 0; i <= 2; i++){
 
 
 
-
-// let arr = Object.values(setting);
-
-
-// console.log(arr);
-
-
-// const toThird = setting.slice(0, 3);
-
-// console.log(toThird);
-
-
-
-
-
-// for(let i = 0; i < fromTopToBottom.length; i++){
-//     if(arr[fromTopToBottom[i]]){
-
-//     }
-// }
-
-
-// const set = new Set(fromTopToBottom);
-// let who = [];
-
-// for(let i = 0; i <= 2; i++){
-//     who += set[i]
-// }
-
-// console.log(who);
-
-// if(fromTopToBottom.includes(set[i])){
-
-// }
-
+// 답안
+const scores = prompt('점수입력').split(' ').map(function(n){
+    return parseInt(n, 10);
+  });
+  
+  scores.sort((a, b) => {
+    return a-b;
+  });
+  
+  let count = 0;
+  let arr = [];
+  
+  while (arr.length < 3) {
+    let n = scores.pop();
+    if (!arr.includes(n)){
+      arr.push(n);
+    }
+    count += 1;
+  }
+  
+  console.log(count);
