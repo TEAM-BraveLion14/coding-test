@@ -19,7 +19,7 @@ const inputHeight = prompt('키를 입력해주세요.').split(' ').map(Number);
 
 function fromShortToTall(){
     for(let i = 0; i < inputHeight.length; i++){
-        if(inputHeight[i + 1] > inputHeight[i]){
+        if(inputHeight[i + 1] > inputHeight[i]){ // 예를 들어 숫자가 155 155 156 165 166 169 176로 되어 있을 때 NO가 나와버림 따라서 > 가 아니라 >= 로 범위를 잡아서 해당 예시같은 경우 YES가 나올 수 있도록 하자[❓❓❓]
             return 'YES'
         }else{
             return 'NO'
@@ -28,6 +28,8 @@ function fromShortToTall(){
 }
 
 fromShortToTall(inputHeight)
+
+
 
 
 // 답안

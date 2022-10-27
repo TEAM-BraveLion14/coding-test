@@ -11,14 +11,14 @@
 // 내 코드
 const inputNum = prompt('숫자 하나를 입력하세요.');
 
-if(inputNum.length > 0 && inputNum.length <= 1){
+if(inputNum.length > 0 && inputNum.length <= 1){ // 이렇게 하지 말고 그냥 inputNum.length === 1 로 하면 더 간단함 [❓❓❓]
     for(let i = 1; i <= 9; i++){
         let gugudan = inputNum * i
         console.log(gugudan);
     }
 }else if(inputNum.length > 1){
     console.log('숫자 하나만 입력하세요.');
-}else if(inputNum === /[^1-9]/){
+}else if(inputNum == /[^1-9]/){
     console.log('숫자를 입력하세요.');
 }
 

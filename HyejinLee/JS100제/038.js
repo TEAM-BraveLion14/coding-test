@@ -44,7 +44,7 @@ const scores = prompt('점수입력').split(' ').map(function(n){
   let count = 0;
   let arr = [];
   
-  while (arr.length < 3) {
+  while (arr.length < 3) {   // 답안이 이상함 수정해야함 [❌❌❌]
     let n = scores.pop();
     if (!arr.includes(n)){
       arr.push(n);
