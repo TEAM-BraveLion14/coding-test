@@ -9,6 +9,8 @@
 // 내 코드
 // 10진수 -> 2진수
 // parseInt를 뺐을 때에는 console.log(change);를 해봤을 때 2진수로 변환이 안됐음 왜 그런거지 [❓❓❓]
+// =>생각해보니까 당연함 prompt는 값 유형이 문자열임
+
 const input = parseInt(prompt('숫자를 입력해주세요.'), 10); 
 const change  = input.toString(2);
 
