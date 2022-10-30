@@ -32,7 +32,7 @@
    - description: 문제 주소 (option)
 
 ## 터미널에서 작성법
-```js git commit -m "[BOJ] Hello World / 브론즈5" -m "https://www.acmicpc.net/problem/2557"```
+```git commit -m "[BOJ] Hello World / 브론즈5" -m "https://www.acmicpc.net/problem/2557"```
 
 ## 플랫폼 작성법 통일:
 - [BOJ] - 백준
@@ -46,5 +46,5 @@
 - PR 제목: 이름 / 주차 / 몇 문제
 - yuncheol shin / 8월 1주차 / 4문제
 
-- comment는 자유이나 가능하다면, 이번주에 풀었던 문제의 알고리즘 분류가 어떻게 되는지,
-- 어떤 문제가 어려웠는지 회고를 작성한다면 개인에게도 도움되고 팀원에게도 도움이 될 것 같습니다!
+comment는 자유이나 가능하다면, 이번주에 풀었던 문제의 알고리즘 분류가 어떻게 되는지,
+어떤 문제가 어려웠는지 회고를 작성한다면 개인에게도 도움되고 팀원에게도 도움이 될 것 같습니다!
