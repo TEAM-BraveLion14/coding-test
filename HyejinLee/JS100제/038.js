@@ -34,22 +34,25 @@ for(let i = 0; i <= 2; i++){
 
 // 답안
 const scores = prompt('점수입력').split(' ').map(function(n){
-    return parseInt(n, 10);
-  });
-  
-  scores.sort((a, b) => {
-    return a-b;
-  });
-  
-  let count = 0;
-  let arr = [];
-  
-  while (arr.length < 3) {   // 답안이 이상함 수정해야함 [❌❌❌]
+  return parseInt(n, 10);
+});
+
+scores.sort((a, b) => {
+  return a-b;
+});
+
+let count = 0;
+let arr = [];
+
+while (arr.length <= 3){
+    if (arr.length === 3 && !scores.includes(arr[2])){
+        break;
+    }
     let n = scores.pop();
     if (!arr.includes(n)){
-      arr.push(n);
+        arr.push(n);
     }
     count += 1;
-  }
-  
-  console.log(count);
+}
+
+console.log(count);
