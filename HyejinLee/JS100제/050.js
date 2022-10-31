@@ -47,6 +47,9 @@ function bubble(arr) {
 // 참고: 배열 순서 바꾸기
 // https://grahams.tistory.com/329
 
+// 참고: 버블 정렬법 알고리즘
+// https://basemenks.tistory.com/12
+
 
 // 답안
 function bubble(arr) {
