@@ -16,7 +16,7 @@ console.log(Math.max(...inputNum));
 
 // Math.max()
 // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/max
-// 배열로 들어왔을때는 spread operater를 사용
+// 배열로 들어왔을때는 spread operater를 사용 [❓❓❓]
 
 
 // 답안

@@ -35,7 +35,7 @@ console.log(arr.length);
 
 // 내 코드 2
 // set 사용했을 때 1
-const arrPeople = {
+const people = {
   이호준: "01050442903",
   이호상: "01051442904",
   이준호: "01050342904",
@@ -45,7 +45,7 @@ const arrPeople = {
   이호준: "01050442903"
 };
 
-const set = new Set(Object.keys(arrPeople));
+const set = new Set(Object.keys(people));
 console.log(set.size);
 
 // 내 코드 3 [❓❓❓]
