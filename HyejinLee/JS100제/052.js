@@ -46,7 +46,7 @@ function quickSort(arr){
       }
     }
     // 위에서 정렬된 것들을 쭉 나열해주기 (이때 pivot은 당연히 가운데 위치)
-    return [quickSort(left) + pivot + quickSort(right)];
+    return [quickSort(left) + pivot + quickSort(right)]; // 이렇게 하면 ['12345'] 이런 식으로 붙어버려서 안될 것 같음 답안처럼 concat 사용하자 [❓❓❓]
   }
   
   const array = prompt('배열을 입력하세요').split(' ').map(n => parseInt(n, 10));
