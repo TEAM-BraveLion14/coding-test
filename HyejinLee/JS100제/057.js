@@ -23,7 +23,7 @@ let str = '';
 for(let i = 1; i <= 1000; i++){
     str += i
 }
-// split으로 문자열이 됐으므로 문자열 리터럴
+// split으로 문자열이 됐으므로 문자열 리터럴 사용 ('1')
 const result = str.split('').filter((x) => x === '1').length;
 
 console.log(result); // 301
