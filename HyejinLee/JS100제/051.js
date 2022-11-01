@@ -71,7 +71,9 @@ function mergeSort(arr){
   
     // 값이 left와 right 둘 다 있을 때의 상황
     // 왼쪽의 길이와 오른쪽의 길이가 0이 아닐때 즉, false가 아닌 true일때 라고 생각함
-    while (left.length === true && right.length === true){
+    // 주의! 2===true가 될 수 없다는 특성을 생각해야 한다.(아래 사이트는 관련 내용)
+    //  https://stackoverflow.com/questions/16729681/javascript-the-confuse-about-comparison-2-true[❓❓❓]
+    while (left.length === true && right.length === true){   
       // 왼쪽과 오른쪽을 비교해서 왼쪽의 첫 번째 값이 더 작으면 그대로 빼내서 result(빈 배열)에 추가
       if (left[0] < right[0]){
         result.push(left.shift());
