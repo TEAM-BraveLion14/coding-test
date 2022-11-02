@@ -12,9 +12,13 @@
 // 내 코드
 // 천 단위 콤마 정규표현식 필요할 때 활용하기 [❓❓❓]
 const input = prompt('숫자를 입력하세요.');
-const result = input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); 
+const result = input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 console.log(result);
-
+/*
+현재 내가 써놓은 정규표현식은 소수점까지는 고려하지 못한다. [❓❓❓]
+세민님 의견: /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g  이거 사용하자
+https://github.com/TEAM-BraveLion14/coding-test/blob/main/SeminKang/JS100%EC%A0%9C/q58.md
+*/
 ----------------------------------------------------------
 
 /*
