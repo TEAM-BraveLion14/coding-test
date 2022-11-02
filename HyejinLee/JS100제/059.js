@@ -20,13 +20,13 @@ let str = '';
 const inputHalfCount = input.length / 2;
 const addStrCount = 25 - ~~inputHalfCount;
 
-if(input.length % 2 === 0 && input.length !== 0 || input.length % 2 !== 0){
+if(input.length % 2 === 0 && input.length !== 0 || input.length % 2 !== 0){     // input.length !== 0 이것만 남겨놔도 제대로 동작함 [❓❓❓]
     str += '='.repeat(addStrCount) + input + '='.repeat(50 - addStrCount - input.length)
 }else if(input.length === 0){
     alert('error: 문자를 입력하셔야 합니다.');
 }
 
-console.log(str); 
+console.log(str);
 
 ----------------------------------------------------------
 
