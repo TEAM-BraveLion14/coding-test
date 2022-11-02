@@ -7,14 +7,42 @@
 
 // 예를 들어, **123456789**를 입력받았으면 **123,456,789**를 출력해야 합니다.
 
+----------------------------------------------------------
 
 // 내 코드
-const input = prompt('숫자를 입력해주세요.').split('').map(Number);
+// 천 단위 콤마 정규표현식 필요할 때 활용하기 [❓❓❓]
+const input = prompt('숫자를 입력하세요.');
+const result = input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); 
+console.log(result);
 
-for()
+----------------------------------------------------------
 
+/*
+아예 콤마를 만들어 주는 내장 함수가 있다고 한다! 정확히는 사용하는 용도에 맞게 변환 시켜줌 [❓❓❓]
+const input = parseInt(prompt('숫자를 입력하세요.'), 10);
+console.log(input.toLocaleString());
 
-console.log(input.join(''));
+참고: https://lily-im.tistory.com/64
 
+*/
+
+----------------------------------------------------------
 
 // 답안
+// 내장함수 사용
+const n = prompt('숫자를 입력해주세요.');
+parseInt(n, 10);
+
+console.log(n.toLocaleString());
+
+// 재귀함수 사용
+function comma(s) {
+  if (s.length <= 3) {
+    return s;
+  } else {
+    return comma(s.slice(0, s.length - 3)) + ',' + s.slice(s.length - 3);
+  }
+}
+
+const n = prompt('숫자를 입력해주세요.');
+console.log(comma(n));
