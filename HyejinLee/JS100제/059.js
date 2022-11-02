@@ -19,8 +19,10 @@ let str = '';
 */
 const inputHalfCount = input.length / 2;
 const addStrCount = 25 - ~~inputHalfCount;
-
-if(input.length % 2 === 0 && input.length !== 0 || input.length % 2 !== 0){     // input.length !== 0 이것만 남겨놔도 제대로 동작함 [❓❓❓]
+/*
+input.length !== 0 이것만 남겨놔도 제대로 동작함 
+이유: 이미 addStrCount 에서 소수점을 버려놨기 때문에 홀짝 구분이 가능해져 있는 상태였음 [❓❓❓] */
+if(input.length % 2 === 0 && input.length !== 0 || input.length % 2 !== 0){     
     str += '='.repeat(addStrCount) + input + '='.repeat(50 - addStrCount - input.length)
 }else if(input.length === 0){
     alert('error: 문자를 입력하셔야 합니다.');
