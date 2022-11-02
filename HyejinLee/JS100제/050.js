@@ -29,7 +29,7 @@ function bubble(arr) {
     let result = arr.slice(); 
 
     for (let i = 0; i < result.length - 1; i++) {
-      for (let j = 0; /*설명*/; j++) {  // 빈칸 1   [❓❓❓]
+      for (let j = 0; /*설명*/; j++) {  // 빈칸 1    i가 한 번 돌 때마다, 가장 큰 수 하나는 무조건 제일 마지막으로 정렬된다. 따라서 이 곳에 넣을 코드는 result.length - i 이런 식으로 뒤에 i를 빼준다. [❓❓❓]
         if (result[j] > result[j + 1]) {
              [result[j], result[j + 1] = result[j + 1], result[j]] // 빈칸 2
         }
