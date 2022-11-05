@@ -16,7 +16,7 @@
 (function(){
     const numZero = 0 + false;  // 0
     const numOne = 0 + true;    // 1
-    const arr = [numOne*20, numOne*19, numZero, numOne*9, numOne*23]
+    const arr = [numOne*20, numOne*19, numZero, numOne*9, numOne*23]   // 조건 1 충족 못한 코드 [❗❗❗]
     const concatNum = arr.join('')
     console.log(concatNum);
 })();
