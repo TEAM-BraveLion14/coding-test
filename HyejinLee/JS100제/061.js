@@ -10,7 +10,7 @@ a3b4c1d4
 
 ----------------------------------------------------------
 
-// <내 코드>
+// <내 코드 1>
 const input = prompt('문자를 입력하세요.').split('');
 
 let str = '';
@@ -25,7 +25,53 @@ for(let i = 0; i < input.length; i++){
     }
 }
 
-console.log(str);   // [❓❓❓] 답이 이상함
+console.log(str);   // [❓❓❓] 답이 이상함 ==> count = 0 초기화가 필요
+
+----------------------------------------------------------
+
+// <내 코드 2>
+// reduce를 사용한 코드 (아직 reduce 사용이 어색하다 제대로 익혀두자) [❓❓❓]
+const input = prompt('문자를 입력하세요.').split('');
+
+const result = input.reduce((acc, curr) => {
+  acc[curr] = (acc[curr] || 0) + 1;
+  return acc;
+}, {});
+
+const joinResult = Object.entries(result).flat().join('');
+
+console.log(joinResult);
+
+----------------------------------------------------------
+
+// <내 코드 3>
+// <추가적으로 생각해본 방식 1> 에서 생각한 정규표현식을 이용해 봤다. [❓❓❓]
+const input = prompt('문자를 입력하세요.');
+
+const result = input => input.replace(/(\D)\1*/g, str => str[0] + str.length);
+
+console.log(result(input));
+
+----------------------------------------------------------
+
+// <내 코드 1 수정>
+const input = prompt('문자를 입력하세요.').split('');
+
+let str = '';
+let count = 0;
+
+for(let i = 0; i < input.length; i++){
+    if(input[i] === input[i+1]){
+        count ++;
+    }else{
+        str += input[i] + (count + 1);
+        count = 0   // 이 부분에 이렇게 초기화 해줘야 함
+    }
+}
+
+console.log(str);
+
+// 혹은 나중에 1 더하지 말고 아예 처음부터 let count = 1 하고, 뒷 부분은 count = 1 로 초기화 하는 것도 방법 [❓❓❓]
 
 ----------------------------------------------------------
 /**     
