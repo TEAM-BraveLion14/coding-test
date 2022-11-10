@@ -24,7 +24,26 @@
 
 ----------------------------------------------------------
 
-// 내 코드
+// 내 코드 (수정 후 코드)
+function result(shakeHands){
+  let peopleNum = 1;
+  let shake = shakeHands;
+
+  while(shakeHands > 0){
+    shakeHands -= peopleNum
+    peopleNum++
+  }
+  // ((peopleNum - 1) * (peopleNum - 2)) / 2 : 민규 제외 나머지 사람들끼리 악수한 횟수
+  minGyuShakeHands = parseInt((shake - (((peopleNum - 1) * (peopleNum - 2)) / 2)), 10)
+  
+  return [minGyuShakeHands, peopleNum]
+}
+
+result(59)
+
+----------------------------------------------------------
+/** 
+(수정 전 코드)
 function result(shakeHands){
   let peopleNum = 0;
   while(shakeHands > 0){
@@ -32,13 +51,13 @@ function result(shakeHands){
     peopleNum ++
   }
 
-  [❓❓❓]
+  [❓❓❓] //세민님, 윤철님꺼 참고하기
 
   return [shakeHands, peopleNum]
 }
 
 result(59)
-
+*/
 ----------------------------------------------------------
 
 // 답안

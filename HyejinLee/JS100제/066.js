@@ -29,6 +29,27 @@
 [다시 풀어보기📛📛📛]
 
 // 내 코드
+const tower = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
+const rule = "ABD";
+
+const result = tower.map(x => {
+    for(let i = 0; i < rule.length; i++){
+          // x.indexOf(rule[i]) === -1 는 "EFGHZ" 고려
+        if((x.indexOf(rule[i]) < x.indexOf(rule[i + 1])) || (x.indexOf(rule[i]) === -1)){
+            return '가능'
+        }else{
+            return '불가능'
+        }
+    }
+})
+
+console.log(result);
+
+// "ADEFQRX"가 '불가능'으로 나오는 걸 봐서 x.indexOf(rule[i]) < x.indexOf(rule[i + 1]) 이 조건에서 걸린듯하다. 그렇다고 해서 x.indexOf(rule[i]) < x.indexOf(rule[i + 2])를 해버리면 "BCAD"도 가능으로 나오게 된다. [❓❓❓]
+
+----------------------------------------------------------
+
+// 내 코드 (수정 전 코드)
 
 const tower = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
 const rule = prompt('알파벳 대문자를 입력하세요').toUpperCase().split('')   // 규칙 1 대문자
