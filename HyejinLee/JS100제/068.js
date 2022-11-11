@@ -34,7 +34,7 @@ for(let j in busTime){
 // 현재 시간
 const whatTimeNow = "12:40";
 let nowTimeNumArr = whatTimeNow.split(":").map(Number);   // [12, 40]
-let nowTimeToMin = nowTimeNumArr[0] * 60 + nowTimeNumArr [1]   // 760
+let nowTimeToMin = nowTimeNumArr[0] * 60 + nowTimeNumArr[1]   // 760
 
 
 // 시간 비교
