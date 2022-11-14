@@ -33,6 +33,7 @@ const output = numCheck => {
     for(let i = 2; i < numCheck; i++){
         for(let j = 2; j < numCheck; j++){
             if(i + j === numCheck){
+              // true일 때 ([❓❓❓] 나중에 코드 알아채기 힘들게 하지 말고 그냥 true라고 명시해 주는 것이 좋은 것 같다.)
                 if(primeNum(i) * primeNum(j) === 1){
                     console.log(`${i + j} == ${i} + ${j}`);
                 }
@@ -43,6 +44,8 @@ const output = numCheck => {
 
 console.log(output(100));
 console.log(output(56));
+
+// '2보다 큰 짝수 n이 주어졌을 때' 라는 문제 조건을 넣지 않은 코드인가? [❓❓❓] => 굳이 안해도 걸러질듯
 
 ----------------------------------------------------------
 
