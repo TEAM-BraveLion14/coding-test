@@ -6,12 +6,15 @@
 
 const graph = {
   A: ['B', 'C'],
-  B: ['A', 'D', 'E'],
+  B: ['A', 'D'],
   C: ['A', 'F'],
   D: ['B'],
-  E: ['B', 'F'],
+  E: ['F'],
   F: ['C', 'E'],
 };
+
+// A => [B, C] => [[A(v) D E], C] => [[A(v), [B(v)], E], C]
+// => [[A(v), [B(v)], [B(v), F]], C] => []
 
 /**A에서 F까지 => A에 F가 있는지? 없음 ['B', 'C'] => B에 F가 있는지? 없음['C', 'A'(v), 'D', 'E'] => C에 F가 있는지? 있음 => 2스텝 */
 
@@ -21,19 +24,22 @@ const getShortestLen = (graph, node, targetNode) => {
   const nodes = [node];
 
   while (nodes.length > 0) {
-    console.log(nodes, step);
+    const tmpNodes = [...nodes];
 
-    for (let i = 0; i < nodes.length; i++) {
-      if (graph[nodes[i]].includes(targetNode)) {
+    console.log('1', nodes, visited, step);
+    for (let i = 0; i < tmpNodes.length; i++) {
+      if (graph[tmpNodes[i]].includes(targetNode)) {
         return step;
+      } else {
+        visited.push(nodes.shift());
       }
     }
 
-    const curNode = nodes.shift();
-    visited.push(curNode);
-    graph[curNode].forEach((e) => !visited.includes(e) && nodes.push(e));
-
+    tmpNodes.forEach((node) =>
+      graph[node].forEach((e) => !visited.includes(e) && nodes.push(e))
+    );
     step += 1;
+    console.log('2', nodes, visited, step);
   }
 
   return -1;
