@@ -62,10 +62,13 @@ console.log(notice);
 ----------------------------------------------------------
 {/* 
 <주의>  [❓❓❓]
+string.padStart(<maxLength>, <padString>)
+
 padStart 사용 시, padString의 타입은 string이므로
 다른 자료형을 입력하면 강제로 toString을 사용하여 
 문자열 형태로 바꿔서 사용해야 한다.
 처음에 이 생각 못하고 했다가 빙빙 돌음
+
 https://sisiblog.tistory.com/238
 */}
 ----------------------------------------------------------
