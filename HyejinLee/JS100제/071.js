@@ -34,7 +34,7 @@ graph = {'E': ['D', 'A'],
 
 function dfs(graph, start){
   let visited = [];   // 방문 여부 확인
-  let stack = [start];     // dfs는 stack 사용, 처음꺼는 일단 무조건 들어가 있는 상태
+  let stack = [start];     // dfs는 stack 사용, 처음꺼는 일단 무조건 들어가 있는 상태, 아래의 while문을 돌기 위해선 뭐라도 들어가 있어야 함
 
   // stack에 무언가가 남아있을 때까지만 진행 
   while(stack.length){

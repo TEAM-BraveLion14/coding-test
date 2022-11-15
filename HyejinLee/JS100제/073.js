@@ -35,6 +35,7 @@ const graph = {'A': ['B', 'C'],
 
 const shortestPath = (graph, first, last) => {
     let visited = [];
+    // while을 돌기 위해 queue에 first 담아놓음
     let queue = [first];
     let count = 0;
 
