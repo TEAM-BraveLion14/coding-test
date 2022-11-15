@@ -16,12 +16,44 @@ graph = {'E': ['D', 'A'],
 출력
 E D A F C B
 
+----------------------------------------------------------
 
 // 내 코드
+// 71번때의 답안 코드 참고
+const graph = {'E': ['D', 'A'],
+              'F': ['D'],
+              'A': ['E', 'C', 'B'],
+              'B': ['A'],
+              'C': ['A'],
+              'D': ['E','F']}
 
 
+const bfs = (graph, start) => {
+  let visited = [];
+  let queue = [start];    // bfs는 queue
 
+  while(queue.length){
+    // 너비 우선 탐색(BFS)은 선입선출 (FIFO)
+    // 앞선 dfs와 다른 점은 shift 하나
+    let temp = queue.shift();  
+    // temp에 담긴 것의 방문여부 확인 
+    if(!visited.includes(temp)){    
+      visited.push(temp);
+      // graph의 키와 연결된 것들 탐색
+      let sub = graph[temp].filter(x => !visited.includes(x));
+      for(let i of sub){
+        queue.push(i);
+      }
+    }
+  }
+  // queue에 남은 것이 없을 경우 return
+  return visited;
+}
 
+console.log(bfs(graph, 'E').join(' '));
+//  E D A F C B
+
+----------------------------------------------------------
 
 // 답안
 const graph = {

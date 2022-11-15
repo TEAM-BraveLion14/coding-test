@@ -21,10 +21,47 @@ A F
 출력
 2
 
+----------------------------------------------------------
+
 // 내 코드
+// 앞의 bfs 코드 참고
+const graph = {'A': ['B', 'C'],
+            'B': ['A', 'D', 'E'],
+            'C': ['A', 'F'],
+            'D': ['B'],
+            'E': ['B', 'F'],
+            'F': ['C', 'E']}
 
 
+const shortestPath = (graph, first, last) => {
+    let visited = [];
+    let queue = [first];
+    let count = 0;
 
+    while(queue.length){
+        for(let i = 0; i < queue.length; i++){
+            let temp = queue.shift();
+            if(temp[i] === last){
+                return count
+            }
+            if(!visited.includes(temp)){    
+                visited.push(temp);
+                // graph의 키와 연결된 것들 탐색
+                let sub = graph[temp].filter(x => !visited.includes(x));
+                for(let i of sub){
+                  queue.push(i);   
+                }       
+        }
+    }
+    // 다 돌고나면 count 1 증가
+    count++
+
+  }
+}
+
+console.log(shortestPath(graph, 'A', 'F'));
+
+----------------------------------------------------------
 
 // 답안
 const graph = {'A': ['B', 'C'],
