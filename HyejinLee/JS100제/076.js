@@ -1,6 +1,6 @@
 /**
+ 
  # 문제76 : 안전한 땅
-
 전쟁이 끝난 후, A 나라에서는 폐허가 된 도시를 재건하려고 한다. 그런데 이 땅은 전쟁의 중심지였으므로 전쟁 중 매립된 지뢰가 아직도 많이 남아 있다는 것이 판명되었다. 
 정부는 가장 먼저 지뢰를 제거하기 위해 수색반을 꾸렸다.
 
@@ -36,15 +36,27 @@ const arr = [[1, 0, 0, 1, 0],
             [0, 0, 0, 0, 0], 
             [0, 0, 1, 0, 0]];
 
-let city = arr.length;
-let check;
-let putArr = [];
+// 수정필요 [❓❓❓]
 
-for(let i = 0; i <= city - check; i++){
-    for(let j = 0; j <= city - check; j++){
-        for(let k = (i + 1); k )
+const result = (arr, check) => {
+  let newnew = []
+  // arr 가로 기준
+  for(let i = 0; i <= (arr.length)-check; i++){
+    // arr 세로 기준
+    for(let j = 0; j <= (arr.length)-check; j++){
+      // check 가로 기준
+      for(let k = i; k <= i + check - 1; k++){
+        // check 세로 기준
+        for(let l = j; l <= j + check - 1; l++){
+          newnew.push(arr[j][k]);
+        }
+      }
     }
+  }
+  // console.log(newnew);
 }
+
+result(arr, 3)
 
 // 배열에서 1이 들어간 것의 개수
 
