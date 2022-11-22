@@ -35,7 +35,6 @@ const num = parseInt(prompt('조합의 수를 입력해주세요.'), 10)
 
 const combination = (hangeul, num) => {
     let output = [];
-    // let lastLast = [];
     if(num === 1){
         return hangeul.map((v) => [v]);
     }
