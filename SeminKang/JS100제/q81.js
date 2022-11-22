@@ -28,68 +28,11 @@ map[1,1] => 1 => map[0,1], map[2,1], map[1,0], map[1,2] => *
 0 0 * 0 0
 */
 
+// 배운점 => for in 은 index를 문자열로 취급하고, 기본 for문은 index를 숫자로 취급함
+
 //https://www.notion.so/81-c77c957d8da548cfb533d5e2eaddf5ac
 
-// const map = '0 0 0 0 0\n0 0 0 0 0\n0 0 0 1 0\n0 0 1 0 0\n0 0 0 0 0'
-//   .split('\n')
-//   .map((e) => e.split(' '));
-const map = '0 1 0 0 1\n0 0 0 0 0\n0 0 0 1 0\n0 0 0 0 0\n0 0 1 0 0'
-  .split('\n')
-  .map((e) => e.split(' '));
-
-const rowLen = map.length;
-const colLen = map[0].length;
-
-// for (let i = 0; i < 10; i++) {
-//   typeof i;
-// }
-// ('number');
-
-// for (let i in map) {
-//   typeof i;
-// }
-// ('string');
-
-for (let i in map) {
-  for (let j in map[i]) {
-    if (map[i][j] === '1') {
-      map[i][j] = 'f';
-
-      i = parseInt(i);
-      j = parseInt(j);
-
-      try {
-        if (i - 1 === -1) {
-          throw 'error';
-        }
-        map[i - 1][j] = '*';
-      } catch (e) {}
-
-      try {
-        if (j - 1 === -1) {
-          throw 'error';
-        }
-        map[i][j - 1] = '*';
-      } catch (e) {}
-
-      try {
-        if (j + 1 === colLen) {
-          throw 'error';
-        }
-        map[i][j + 1] = '*';
-      } catch (e) {}
-
-      try {
-        if (i + 1 === rowLen) {
-          throw 'error';
-        }
-        map[i + 1][j] = '*';
-      } catch (e) {}
-    }
-  }
-}
-
-// const map = '0 1 0 0 0\n0 0 0 0 0\n0 0 0 1 0\n0 0 1 0 0\n0 0 0 0 0'
+// const map = '0 1 0 0 1\n0 0 0 0 0\n0 0 0 1 0\n0 0 0 0 0\n0 0 1 0 0'
 //   .split('\n')
 //   .map((e) => e.split(' '));
 
@@ -98,42 +41,67 @@ for (let i in map) {
 
 // for (let i in map) {
 //   for (let j in map[i]) {
-//     // console.log(i, j);
+//     if (map[i][j] === '1') {
+//       map[i][j] = 'f';
 
-//       if (map[i][j] === '1') {
+//       i = parseInt(i);
+//       j = parseInt(j);
 
+//       try {
+//         if (i - 1 === -1) {
+//           throw 'error';
+//         }
 //         map[i - 1][j] = '*';
-//         map[i + 1][j] = '*';
+//       } catch (e) {}
+
+//       try {
+//         if (j - 1 === -1) {
+//           throw 'error';
+//         }
 //         map[i][j - 1] = '*';
+//       } catch (e) {}
+
+//       try {
+//         if (j + 1 === colLen) {
+//           throw 'error';
+//         }
 //         map[i][j + 1] = '*';
-//         map[i][j] = 'f';
-//       }
+//       } catch (e) {}
+
+//       try {
+//         if (i + 1 === rowLen) {
+//           throw 'error';
+//         }
+//         map[i + 1][j] = '*';
+//       } catch (e) {}
 //     }
 //   }
 // }
 
-/**
- * const map = '0 1 0 0 0\n0 0 0 0 0\n0 0 0 1 0\n0 0 1 0 0\n0 0 0 0 0'
+const map = '0 1 0 0 0\n0 0 0 0 0\n0 0 0 1 0\n0 0 1 0 0\n0 0 0 0 0'
   .split('\n')
   .map((e) => e.split(' '));
 
-for (let i in map) {
-  for (let j in map[i]) {
-    // console.log(i, j);
-    if (
-      map[i][j] === '1' ||
-      map[i - 1][j] !== undefined ||
-      map[i + 1][j] !== undefined ||
-      map[i][j - 1] !== undefined ||
-      map[i][j + 1] !== undefined
-    ) {
-      map[i - 1][j] = '*';
-      map[i + 1][j] = '*';
-      map[i][j - 1] = '*';
-      map[i][j + 1] = '*';
+const rowLen = map.length;
+const colLen = map[0].length;
+
+for (let i = 0; i < rowLen; i++) {
+  for (let j = 0; j < colLen; j++) {
+    if (map[i][j] === '1') {
+      if (i - 1 !== -1) {
+        map[i - 1][j] = '*';
+      }
+      if (i + 1 !== rowLen) {
+        map[i + 1][j] = '*';
+      }
+      if (j - 1 !== -1) {
+        map[i][j - 1] = '*';
+      }
+      if (j + 1 !== 1) {
+        map[i][j + 1] = '*';
+      }
+
       map[i][j] = 'f';
     }
   }
 }
-
- */
