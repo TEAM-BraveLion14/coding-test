@@ -34,7 +34,7 @@ const pick = (numArr, cnt) => {
     return result;
 }
 
-pick(numArr, cnt)       // [Array(2), Array(2), ...Array(2)]
+pick(numArr, cnt)     // [Array(2), Array(2), ...Array(2)]
 
 const output = pick(numArr, cnt)
 
