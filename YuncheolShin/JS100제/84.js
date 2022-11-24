@@ -11,10 +11,10 @@
 
 // const numStr = String(number);
 // const result = [];
-// for (let i of numStr) {
-//   for (let j of numStr) {
+// for (let i in numStr) {
+//   for (let j in numStr) {
 //     if (i === j) continue;
-//     result.push(parseInt(i + j));
+//     result.push(parseInt(numStr[i] + numStr[j]));
 //   }
 // }
 
